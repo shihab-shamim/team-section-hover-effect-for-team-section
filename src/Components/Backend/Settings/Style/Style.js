@@ -1,54 +1,98 @@
-import { useState } from "react";
-import { __ } from "@wordpress/i18n";
-import {
-  PanelBody,
-  PanelRow,
-} from "@wordpress/components";
-import { Background, BButtonGroup, BoxControl, ColorsControl, Device, Label } from "../../../../../../bpl-tools/Components";
-import { updateData } from "../../../../utils/functions";
+  import { useState } from "react";
+  import { __ } from "@wordpress/i18n";
+  import {
+    PanelBody,
+    PanelRow,
+    RangeControl,
+    SelectControl,
+    __experimentalUnitControl as  UnitControl
+  } from "@wordpress/components";
+  import { Background, BButtonGroup, BoxControl, ColorsControl, Device, Label, ShadowControl } from "../../../../../../bpl-tools/Components";
+  import { updateData } from "../../../../utils/functions";
 
-const Style = ({ attributes, setAttributes ,device}) => {
-  const { styles={} } = attributes;
+  const Style = ({ attributes, setAttributes ,device}) => {
+    const { styles={} } = attributes;
 
 
 
-  return (
-    <>
-        <PanelBody
-        
-          className="bPlPanelBody"
-          title={__("Container", "team-section")}
-          initialOpen={false}
-        >
-          <Background label={__("Background", "team-section")} value={styles?.bg} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"bg")})}  />
-
-            <PanelRow><Label>Padding</Label><Device/></PanelRow>
+    return (
+      <>
+          <PanelBody
           
-          <BoxControl  values={styles?.padding[device]} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"padding",device)})}/>
+            className="bPlPanelBody"
+            title={__("Container", "team-section")}
+            initialOpen={false}
+          >
+            <Background label={__("Background", "team-section")} value={styles?.bg} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"bg")})}  />
 
-              <PanelRow><Label>Margin</Label><Device/></PanelRow>
+              <PanelRow><Label>Padding</Label><Device/></PanelRow>
+            
+            <BoxControl  values={styles?.padding[device]} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"padding",device)})}/>
+
+                <PanelRow><Label>Margin</Label><Device/></PanelRow>
+            
+            <BoxControl  values={styles?.margin[device]} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"margin",device)})}/>
+            
+            <BoxControl  className='mt15' label="Radius"  values={styles?.radius} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"radius")})}/>
+
+              <BButtonGroup className="mt15" label="Alignment" options={[
+    { label: 'Left', value: 'left' },
+    { label: 'Center', value: 'center' },
+    { label: 'Right', value: 'right' },
+  ]} value={styles?.align} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"align")})} />
+
+          </PanelBody>
+
+          <PanelBody className="bPlPanelBody"
+            title={__("Team Profile", "team-section")}
+            initialOpen={false}>
+
+              <Background label={__("Background", "team-section")} value={styles?.teamProfile?.bg} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","bg")})} />
+
+                <UnitControl className="mt15" label="Width" value={styles?.teamProfile?.width} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","width")})} />
+
+                  <UnitControl className="mt15" label="Height" value={styles?.teamProfile?.height} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","height")})} />
+          <UnitControl className="mt15" label="Hover Height" value={styles?.teamProfile?.hoverHeight} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","hoverHeight")})} />
+
+                    <BoxControl className="mt15" label="Padding" values={styles?.teamProfile?.padding} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","padding")})} />
+
+                            <BoxControl className="mt15" label="Radius" values={styles?.teamProfile?.radius} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","radius")})} />
+
+                              <BoxControl className="mt15" label="Hover Radius" values={styles?.teamProfile?.hoverRadius} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","hoverRadius")})} />
+                                <ShadowControl label="Shadow" value={styles?.teamProfile?.shadow} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","shadow")})} />
+
+
+
+
+          </PanelBody>
+
+          <PanelBody className="bPlPanelBody"
+            title={__("Image", "team-section")}
+            initialOpen={false}>
+
+                <UnitControl className="mt15" label="Width" value={styles?.teamProfile?.image?.width} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","image","width")})} />
+
+                  <UnitControl className="mt15" label="Height" value={styles?.teamProfile?.image?.height} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","image","height")})} />
+
+                    
+                    <BoxControl className="mt15" label="Radius" values={styles?.teamProfile?.image?.radius} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","image","radius")})} />
+                      <BoxControl className="mt15" label="Hover Radius" values={styles?.teamProfile?.image?.hoverRadius} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","image","hoverRadius")})} />
+                    <ShadowControl className='mt15' label="Shadow" value={styles?.teamProfile?.image?.shadow} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","image","shadow")})} />
+
+                      <SelectControl className="mt15" options={[
+                        {label:"Fill",value:"fill"},
+                        {label:"Contain",value:"contain"},
+                        {label:"Cover",value:"cover"},
+                        {label:"Scale Down",value:"scale-down"},
+                        {label:"None",value:"none"},
+                      ]} label="Image Fit" value={styles?.teamProfile?.image?.imageFit} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","image","imageFit")})} />
+                      <RangeControl min={-200} max={200} className="mt15" label="Translate Y (Hover)" value={styles?.teamProfile?.image?.translateY} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","image","translateY")})} />
+
+
+          </PanelBody>
           
-          <BoxControl  values={styles?.margin[device]} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"margin",device)})}/>
-          
-          <BoxControl  className='mt15' label="Radius"  values={styles?.radius} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"radius")})}/>
+      </>
+    );
+  };
 
-            <BButtonGroup className="mt15" label="Alignment" options={[
-  { label: 'Left', value: 'left' },
-  { label: 'Center', value: 'center' },
-  { label: 'Right', value: 'right' },
-]} value={styles?.align} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"align")})} />
-
-        </PanelBody>
-
-        <PanelBody className="bPlPanelBody"
-          title={__("Team Profile", "team-section")}
-          initialOpen={true}>
-
-            <Background value={styles?.teamProfile?.bg} />
-
-        </PanelBody>
-    </>
-  );
-};
-
-export default Style;
+  export default Style;

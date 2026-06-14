@@ -11,32 +11,19 @@ $primaryColor: #4527a4;
             width: 100%;
             display: grid;
             align-content: center;
-            // padding: 40px 20px;
+    
 
     
         }
 
         .tsbwhe-profile-card {
             position: relative;
-            // width: 220px;
-            // height: 220px;
-            // background: #fff;
-            // padding: 30px;
-            // border-radius: 50%;
-            box-shadow: 0 0 22px #3336;
             transition: .6s;
 
             &:hover {
-                border-radius: 10px;
-                height: 260px;
+                
 
-                .tsbwhe-img {
-                    transform: translateY(-60px) !important;
-                }
-
-                img {
-                    border-radius: 10px !important;
-                }
+               
 
                 .tsbwhe-caption {
                     opacity: 1;
@@ -51,10 +38,7 @@ $primaryColor: #4527a4;
                 z-index: 99;
 
                 img {
-                    width: 160px;
-                    height: 160px;
-                    border-radius: 50%;
-                    box-shadow: 0 0 22px #3336;
+                    
                     transition: .6s;
                 }
             }
