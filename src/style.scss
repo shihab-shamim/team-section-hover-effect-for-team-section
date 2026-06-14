@@ -7,6 +7,10 @@ $primaryColor: #4527a4;
             padding: 0;
             box-sizing: border-box;
         }
+        a{
+            outline: none !important;
+            
+        }
         .tsbwhe-main {
             width: 100%;
             display: grid;
@@ -49,15 +53,15 @@ $primaryColor: #4527a4;
                 opacity: 0;
                 transition: .6s;
 
-                h3 {
-                    font-size: 21px;
-                    font-family: sans-serif;
-                }
+                // .tsbwhe-name {
+                //     font-size: 21px;
+                //     font-family: sans-serif;
+                // }
 
-                p {
-                    font-size: 15px;
-                    color: #0c52a1;
-                    font-family: sans-serif;
+                .tsbwhe-designation {
+                    // font-size: 15px;
+                    // color: #0c52a1;
+                    // font-family: sans-serif;
                     margin: 2px 0 9px 0;
                 }
 
@@ -67,16 +71,16 @@ $primaryColor: #4527a4;
                     gap: 15px;
 
                     a {
-                        color: #333;
-                        font-size: 21px;
+                        // color: #333;
+                        // font-size: 21px;
                         transition: .6s;
                         display: inline-flex;
                         align-items: center;
                         text-decoration: none;
 
-                        &:hover {
-                            color: #0c52a1;
-                        }
+                        // &:hover {
+                        //     color: #0c52a1;
+                        // }
 
                         span {
                             display: inline-flex;
@@ -85,8 +89,8 @@ $primaryColor: #4527a4;
                         }
 
                         svg {
-                            width: 21px !important;
-                            height: 21px !important;
+                            // width: 21px !important;
+                            // height: 21px !important;
                             fill: currentColor;
                             vertical-align: middle;
                         }

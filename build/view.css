@@ -9,6 +9,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+.wp-block-tsb-team-section-hover-effect-pro a {
+  outline: none !important;
+}
 .wp-block-tsb-team-section-hover-effect-pro .tsbwhe-main {
   width: 100%;
   display: grid;
@@ -37,14 +40,7 @@
   opacity: 0;
   transition: 0.6s;
 }
-.wp-block-tsb-team-section-hover-effect-pro .tsbwhe-profile-card .tsbwhe-caption h3 {
-  font-size: 21px;
-  font-family: sans-serif;
-}
-.wp-block-tsb-team-section-hover-effect-pro .tsbwhe-profile-card .tsbwhe-caption p {
-  font-size: 15px;
-  color: #0c52a1;
-  font-family: sans-serif;
+.wp-block-tsb-team-section-hover-effect-pro .tsbwhe-profile-card .tsbwhe-caption .tsbwhe-designation {
   margin: 2px 0 9px 0;
 }
 .wp-block-tsb-team-section-hover-effect-pro .tsbwhe-profile-card .tsbwhe-caption .tsbwhe-social-links {
@@ -53,15 +49,10 @@
   gap: 15px;
 }
 .wp-block-tsb-team-section-hover-effect-pro .tsbwhe-profile-card .tsbwhe-caption .tsbwhe-social-links a {
-  color: #333;
-  font-size: 21px;
   transition: 0.6s;
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-}
-.wp-block-tsb-team-section-hover-effect-pro .tsbwhe-profile-card .tsbwhe-caption .tsbwhe-social-links a:hover {
-  color: #0c52a1;
 }
 .wp-block-tsb-team-section-hover-effect-pro .tsbwhe-profile-card .tsbwhe-caption .tsbwhe-social-links a span {
   display: inline-flex;
@@ -69,8 +60,6 @@
   line-height: 0;
 }
 .wp-block-tsb-team-section-hover-effect-pro .tsbwhe-profile-card .tsbwhe-caption .tsbwhe-social-links a svg {
-  width: 21px !important;
-  height: 21px !important;
   fill: currentColor;
   vertical-align: middle;
 }

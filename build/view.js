@@ -1030,9 +1030,21 @@ const Style = ({
   const mainSl = `#${id}`;
   const teamSectionSl = `${mainSl} .tsbwhe-main`;
   const teamProfileSl = `${teamSectionSl} .tsbwhe-profile-card`;
+  const teamNameSl = `${teamSectionSl} .tsbwhe-name`;
+  const teamDesignationSl = `${teamSectionSl} .tsbwhe-designation`;
+  const iconSl = `${teamSectionSl} .tsbwhe-social-links a`;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
+
+		 ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", styles?.teamProfile?.name?.typo)?.googleFontLink}
+		 ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", styles?.teamProfile?.designation?.typo)?.googleFontLink}
+
+
+		 ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(teamNameSl, styles?.teamProfile?.name?.typo)?.styles}
+		 ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(teamDesignationSl, styles?.teamProfile?.designation?.typo)?.styles}
+		
+
 
 		${teamSectionSl}{
 		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg)}
@@ -1082,6 +1094,35 @@ const Style = ({
 				object-fit:${styles?.teamProfile?.image?.imageFit};
 			
 			}
+
+			${teamNameSl}{
+			color:${styles?.teamProfile?.name?.color};
+			}
+			${teamDesignationSl}{
+			color:${styles?.teamProfile?.designation?.color};
+			}
+
+			${iconSl}{
+			font-size: ${styles?.teamProfile?.icon?.size || 21}px;
+			width: ${styles?.teamProfile?.icon?.size || 21}px;
+			height: ${styles?.teamProfile?.icon?.size || 21}px;
+			color: ${styles?.teamProfile?.icon?.color || '#000000'};
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			transition: color 0.3s ease;
+			}
+
+			${teamSectionSl} .tsbwhe-social-links{
+			gap: ${styles?.teamProfile?.icon?.gap || 15}px;
+			}
+
+			${iconSl}:hover{
+			color: ${styles?.teamProfile?.icon?.hoverColor || '#0c52a1'};
+			}
+
+
+		
 
 
 		${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint}{
@@ -1154,9 +1195,14 @@ const OneCard = ({
       alt: name
     })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "tsbwhe-caption"
-    }, showName && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, name), showDesignation && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, designation), showSocial && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    }, showName && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+      className: "tsbwhe-name"
+    }, name), showDesignation && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      className: "tsbwhe-designation"
+    }, designation), showSocial && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "tsbwhe-social-links"
     }, social.map((item, sIndex) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+      className: "tsbwhe-social-links",
       href: item.link || '#',
       key: sIndex,
       target: openInNewTab ? '_blank' : '_self',

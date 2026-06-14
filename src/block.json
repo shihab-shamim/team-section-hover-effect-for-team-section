@@ -205,6 +205,55 @@
 "imageFit":"cover",
 "translateY":-60
 
+},
+"name":{
+	"color":"#000000",
+	"typo": {
+                "fontFamily": "",
+                "fontCategory": "",
+                "fontWeight": "",
+                "fontVariant": "",
+                "isUploadFont": false,
+                "fontSize": {
+                  "desktop": 21,
+                  "tablet": 21,
+                  "mobile": 21
+                },
+                "fontStyle": "normal",
+                "textTransform": "none",
+                "textDecoration": "none",
+                "lineHeight": "",
+                "letterSpace": ""
+              }
+
+},
+"designation":{
+	"color":"#0c52a1",
+	"typo": {
+                "fontFamily": "",
+                "fontCategory": "",
+                "fontWeight": "",
+                "fontVariant": "",
+                "isUploadFont": false,
+                "fontSize": {
+                  "desktop": 15,
+                  "tablet": 15,
+                  "mobile": 15
+                },
+                "fontStyle": "normal",
+                "textTransform": "none",
+                "textDecoration": "none",
+                "lineHeight": "",
+                "letterSpace": ""
+              }
+
+},
+"icon":{
+	"size":21,
+	"color":"#000000",
+	"gap":15,
+	"hoverColor":"#0c52a1"
+	
 }
 		  }
       }

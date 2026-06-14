@@ -1,5 +1,5 @@
 import { mobileBreakpoint, tabBreakpoint } from '../../../../bpl-tools/utils/data';
-import { getBackgroundCSS, getBoxCSS, getColorsCSS ,getMultiShadowCSS} from '../../../../bpl-tools/utils/getCSS';
+import { getBackgroundCSS, getBoxCSS, getColorsCSS ,getMultiShadowCSS, getTypoCSS} from '../../../../bpl-tools/utils/getCSS';
 
 const Style = ({ attributes, id }) => {
 	const { styles = {} } = attributes;
@@ -7,9 +7,21 @@ const Style = ({ attributes, id }) => {
 	const mainSl = `#${id}`;
 	const teamSectionSl = `${mainSl} .tsbwhe-main`;
 	const teamProfileSl = `${teamSectionSl} .tsbwhe-profile-card`;
+	const teamNameSl = `${teamSectionSl} .tsbwhe-name`;
+	const teamDesignationSl = `${teamSectionSl} .tsbwhe-designation`;
+	const iconSl = `${teamSectionSl} .tsbwhe-social-links a`;
 
 	return <style dangerouslySetInnerHTML={{
 		__html: `
+
+		 ${getTypoCSS("", styles?.teamProfile?.name?.typo)?.googleFontLink}
+		 ${getTypoCSS("", styles?.teamProfile?.designation?.typo)?.googleFontLink}
+
+
+		 ${getTypoCSS(teamNameSl, styles?.teamProfile?.name?.typo)?.styles}
+		 ${getTypoCSS(teamDesignationSl, styles?.teamProfile?.designation?.typo)?.styles}
+		
+
 
 		${teamSectionSl}{
 		${getBackgroundCSS(styles?.bg)}
@@ -59,6 +71,35 @@ const Style = ({ attributes, id }) => {
 				object-fit:${styles?.teamProfile?.image?.imageFit};
 			
 			}
+
+			${teamNameSl}{
+			color:${styles?.teamProfile?.name?.color};
+			}
+			${teamDesignationSl}{
+			color:${styles?.teamProfile?.designation?.color};
+			}
+
+			${iconSl}{
+			font-size: ${styles?.teamProfile?.icon?.size || 21}px;
+			width: ${styles?.teamProfile?.icon?.size || 21}px;
+			height: ${styles?.teamProfile?.icon?.size || 21}px;
+			color: ${styles?.teamProfile?.icon?.color || '#000000'};
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			transition: color 0.3s ease;
+			}
+
+			${teamSectionSl} .tsbwhe-social-links{
+			gap: ${styles?.teamProfile?.icon?.gap || 15}px;
+			}
+
+			${iconSl}:hover{
+			color: ${styles?.teamProfile?.icon?.hoverColor || '#0c52a1'};
+			}
+
+
+		
 
 
 		${tabBreakpoint}{

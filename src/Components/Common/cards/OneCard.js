@@ -15,11 +15,11 @@ export const OneCard = ({attributes}) => {
                         <img src={image} alt={name} />
                     </div>
                     <div className="tsbwhe-caption">
-                      {showName && <h3>{name}</h3>}
-                      {showDesignation && <p>{designation}</p>}
+                      {showName && <h3 className="tsbwhe-name">{name}</h3>}
+                      {showDesignation && <p className="tsbwhe-designation">{designation}</p>}
                         {showSocial && <div className="tsbwhe-social-links">
                             {social.map((item, sIndex) => (
-                                <a href={item.link || '#'} key={sIndex} target={openInNewTab ? '_blank' : '_self'} rel='noopener noreferrer'>
+                                <a className="tsbwhe-social-links" href={item.link || '#'} key={sIndex} target={openInNewTab ? '_blank' : '_self'} rel='noopener noreferrer'>
                                     <span dangerouslySetInnerHTML={{ __html: item.icon }} />
                                 </a>
                             ))}

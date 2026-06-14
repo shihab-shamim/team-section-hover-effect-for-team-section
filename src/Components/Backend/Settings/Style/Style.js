@@ -7,7 +7,7 @@
     SelectControl,
     __experimentalUnitControl as  UnitControl
   } from "@wordpress/components";
-  import { Background, BButtonGroup, BoxControl, ColorsControl, Device, Label, ShadowControl } from "../../../../../../bpl-tools/Components";
+  import { Background, BButtonGroup, BoxControl, ColorControl, ColorsControl, Device, Label, ShadowControl, Typography } from "../../../../../../bpl-tools/Components";
   import { updateData } from "../../../../utils/functions";
 
   const Style = ({ attributes, setAttributes ,device}) => {
@@ -87,6 +87,34 @@
                         {label:"None",value:"none"},
                       ]} label="Image Fit" value={styles?.teamProfile?.image?.imageFit} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","image","imageFit")})} />
                       <RangeControl min={-200} max={200} className="mt15" label="Translate Y (Hover)" value={styles?.teamProfile?.image?.translateY} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","image","translateY")})} />
+
+
+          </PanelBody>
+
+
+          <PanelBody className="bPlPanelBody"
+            title={__("Name", "team-section")}
+            initialOpen={false}>
+            <ColorControl label="Color" value={styles?.teamProfile?.name?.color} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","name","color")})} />
+            <Typography className="mt15" label="Typography" value={styles?.teamProfile?.name?.typo} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","name","typo")})} />
+
+          </PanelBody>
+
+            <PanelBody className="bPlPanelBody"
+            title={__("Designation", "team-section")}
+            initialOpen={false}>
+            <ColorControl label="Color" value={styles?.teamProfile?.designation?.color} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","designation","color")})} />
+            <Typography className="mt15" label="Typography" value={styles?.teamProfile?.designation?.typo} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","designation","typo")})} />
+
+          </PanelBody>
+
+          <PanelBody className="bPlPanelBody"
+            title={__("Icon", "team-section")}
+            initialOpen={false}>
+              <ColorControl className='mt15' label="Color" value={styles?.teamProfile?.icon?.color} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","icon","color")})} />
+              <ColorControl className='mt15' label="Hover Color" value={styles?.teamProfile?.icon?.hoverColor} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","icon","hoverColor")})} />
+              <RangeControl min={0} max={100} className="mt15" label="Size" value={styles?.teamProfile?.icon?.size} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","icon","size")})} />
+              <RangeControl min={0} max={100} className="mt15" label="Gap" value={styles?.teamProfile?.icon?.gap} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","icon","gap")})} />
 
 
           </PanelBody>
