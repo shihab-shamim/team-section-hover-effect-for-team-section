@@ -39,6 +39,14 @@ const Style = ({ attributes, setAttributes ,device}) => {
 ]} value={styles?.align} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"align")})} />
 
         </PanelBody>
+
+        <PanelBody className="bPlPanelBody"
+          title={__("Team Profile", "team-section")}
+          initialOpen={true}>
+
+            <Background value={styles?.teamProfile?.bg} />
+
+        </PanelBody>
     </>
   );
 };

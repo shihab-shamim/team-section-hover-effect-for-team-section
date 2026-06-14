@@ -6,6 +6,7 @@ const Style = ({ attributes, id }) => {
 
 	const mainSl = `#${id}`;
 	const teamSectionSl = `${mainSl} .tsbwhe-main`;
+	const teamProfileSl = `${teamSectionSl} .tsbwhe-profile-card `;
 
 	return <style dangerouslySetInnerHTML={{
 		__html: `
@@ -23,6 +24,18 @@ const Style = ({ attributes, id }) => {
 
 		
 		}
+
+		${teamProfileSl}{
+		${getBackgroundCSS(styles?.teamProfile?.bg)},
+		width:${styles?.teamProfile?.width};
+		height:${styles?.teamProfile?.height};
+		border-radius:${getBoxCSS(styles?.teamProfile?.radius)};
+		padding:${getBoxCSS(styles?.teamProfile?.padding)};
+
+		
+		}
+
+
 
 		${tabBreakpoint}{
 		${teamSectionSl}{

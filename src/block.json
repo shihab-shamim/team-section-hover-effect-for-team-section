@@ -143,7 +143,24 @@
 						"bottom":"0px",
 						"left":"0px"
 					},
-          "align":"center"
+          "align":"center",
+		  "teamProfile":{
+			"bg":{"type":"solid","color":"#ffffff"},
+			"padding":{
+				"top":"30px",
+				"right":"30px",
+				"bottom":"30px",
+				"left":"30px"
+			},
+			"radius":{
+				"top":"50%",
+				"right":"50%",
+				"bottom":"50%",
+				"left":"50%"
+			},
+			"width":"220px",
+			"height":"220px"
+		  }
       }
     }
 		
