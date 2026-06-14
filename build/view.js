@@ -1021,20 +1021,31 @@ const Style = ({
       __html: `
 
 		${teamSectionSl}{
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg)}
+		padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding?.desktop)};
+		margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin?.desktop)};
+		border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.radius)};
 		 grid-template-columns: repeat(${styles?.columns?.desktop}, 220px);
 		 		column-gap: ${styles?.columnGap || 50}px;
 			row-gap: ${styles?.rowGap || 50}px;
+            justify-content: ${styles?.align};
+
+
 		
 		}
 
 		${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint}{
 		${teamSectionSl}{
 		 grid-template-columns: repeat(${styles?.columns?.tablet}, 220px);
+		 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding?.tablet)};
+		margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin?.tablet)};
          	}
 		}
 				${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.mobileBreakpoint}{
 		${teamSectionSl}{
 		 grid-template-columns: repeat(${styles?.columns?.mobile}, 220px);
+		 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding?.mobile)};
+		margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin?.mobile)};
          	}
 		}
 		

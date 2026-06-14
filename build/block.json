@@ -97,7 +97,55 @@
           "mobile": 1
         },
         "columnGap": 50,
-        "rowGap": 50
+        "rowGap": 50,
+        "bg": {},
+        "padding": {
+          "desktop": {
+            "top": "40px",
+            "right": "20px",
+            "bottom": "40px",
+            "left": "20px"
+          },
+          "tablet": {
+            "top": "40px",
+            "right": "20px",
+            "bottom": "40px",
+            "left": "20px"
+          },
+          "mobile": {
+            "top": "40px",
+            "right": "20px",
+            "bottom": "40px",
+            "left": "20px"
+          }
+        },
+        "margin": {
+          "desktop": {
+            "top": "0px",
+            "right": "0px",
+            "bottom": "0px",
+            "left": "0px"
+          },
+          "tablet": {
+            "top": "0px",
+            "right": "0px",
+            "bottom": "0px",
+            "left": "0px"
+          },
+          "mobile": {
+            "top": "0px",
+            "right": "0px",
+            "bottom": "0px",
+            "left": "0px"
+          }
+        },
+        "radius": {
+          "top": "0px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px"
+        },
+        "align": "center"
       }
     }
   },

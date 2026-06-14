@@ -12,10 +12,7 @@
 .wp-block-tsb-team-section-hover-effect-pro .tsbwhe-main {
   width: 100%;
   display: grid;
-  justify-content: center;
   align-content: center;
-  gap: 50px;
-  padding: 40px 20px;
 }
 .wp-block-tsb-team-section-hover-effect-pro .tsbwhe-profile-card {
   position: relative;
