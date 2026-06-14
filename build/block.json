@@ -1,0 +1,47 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "tsb/team-section-hover-effect-pro",
+  "version": "1.0.0",
+  "title": "Team Section With Hover Effect",
+  "category": "widgets",
+  "description": "Team Section With Hover Effect is a WordPress plugin that allows you to create team section with hover effect on your website.",
+  "keywords": [
+    "Team Section With Hover Effect",
+    "team",
+    "hover"
+  ],
+  "textdomain": "team-section",
+  "attributes": {
+    "alignment": {
+      "type": "string",
+      "default": "center"
+    },
+    "purposeType": {
+      "type": "string",
+      "default": "test"
+    },
+    "colors": {
+      "type": "object",
+      "default": {
+        "color": "black",
+        "bg": "#B1C5A4"
+      }
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false
+  },
+  "example": {
+    "attributes": {}
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./view.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js"
+}

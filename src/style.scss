@@ -1,0 +1,116 @@
+$primaryColor: #4527a4;
+
+.wp-block-tsb-team-section-hover-effect-pro {
+	box-sizing: border-box;
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+
+        .tsbwhe-main {
+            width: 100%;
+            // min-height: 100vh;
+            display: grid;
+            grid-template-columns: repeat(3, 220px);
+            justify-content: center;
+            align-content: center;
+            gap: 50px;
+            // background-color: #0c5db9;
+            padding: 40px 20px;
+
+            @media (max-width: 768px) {
+                grid-template-columns: repeat(2, 220px);
+            }
+
+            @media (max-width: 480px) {
+                grid-template-columns: 220px;
+            }
+        }
+
+        .tsbwhe-profile-card {
+            position: relative;
+            font-family: sans-serif;
+            width: 220px;
+            height: 220px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 50%;
+            box-shadow: 0 0 22px #3336;
+            transition: .6s;
+
+            &:hover {
+                border-radius: 10px;
+                height: 260px;
+
+                .tsbwhe-img {
+                    transform: translateY(-60px) !important;
+                }
+
+                img {
+                    border-radius: 10px !important;
+                }
+
+                .tsbwhe-caption {
+                    opacity: 1;
+                }
+            }
+
+            .tsbwhe-img {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                transition: .6s;
+                z-index: 99;
+
+                img {
+                    width: 100%;
+                    border-radius: 50%;
+                    box-shadow: 0 0 22px #3336;
+                    transition: .6s;
+                }
+            }
+
+            .tsbwhe-caption {
+                text-align: center;
+                transform: translateY(-80px);
+                opacity: 0;
+                transition: .6s;
+
+                h3 {
+                    font-size: 21px;
+                    font-family: sans-serif;
+                }
+
+                p {
+                    font-size: 15px;
+                    color: #0c52a1;
+                    font-family: sans-serif;
+                    margin: 2px 0 9px 0;
+                }
+
+                .tsbwhe-social-links {
+                    a {
+                        color: #333;
+                        margin-right: 15px;
+                        font-size: 21px;
+                        transition: .6s;
+                        display: inline-block;
+
+                        &:hover {
+                            color: #0c52a1;
+                        }
+
+                        svg {
+                            width: 21px;
+                            height: 21px;
+                            fill: currentColor;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+            }
+        }
+}
