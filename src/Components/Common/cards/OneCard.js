@@ -1,7 +1,8 @@
 
 
 export const OneCard = ({attributes}) => {
-    const {profiles =[]} = attributes || {};
+    const {profiles =[],options} = attributes || {};
+    const { showName, showDesignation, showSocial, openInNewTab } = options || {};
 
 
     return (
@@ -14,15 +15,15 @@ export const OneCard = ({attributes}) => {
                         <img src={image} alt={name} />
                     </div>
                     <div className="tsbwhe-caption">
-                        <h3>{name}</h3>
-                        <p>{designation}</p>
-                        <div className="tsbwhe-social-links">
+                      {showName && <h3>{name}</h3>}
+                      {showDesignation && <p>{designation}</p>}
+                        {showSocial && <div className="tsbwhe-social-links">
                             {social.map((item, sIndex) => (
-                                <a href={item.link || '#'} key={sIndex}>
+                                <a href={item.link || '#'} key={sIndex} target={openInNewTab ? '_blank' : '_self'} rel='noopener noreferrer'>
                                     <span dangerouslySetInnerHTML={{ __html: item.icon }} />
                                 </a>
                             ))}
-                        </div>
+                        </div>}
                     </div>
                 </div>
             );

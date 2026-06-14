@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
 
-import { PanelBody, SelectControl } from '@wordpress/components';
+import { PanelBody, PanelRow, RangeControl, SelectControl, ToggleControl } from '@wordpress/components';
 import { updateData } from '../../../../utils/functions';
 import { Device, ItemsPanel, Label } from '../../../../../../bpl-tools/Components';
 import OneSetting from '../../../Common/cards/OneSetting';
@@ -46,6 +46,43 @@ const General = ({ attributes, setAttributes ,device}) => {
           itemLabel="Profile"
           ItemSettings={OneSetting}
         />
+      </PanelBody>
+
+            <PanelBody className="bPlPanelBody"
+        title={__("Layouts", "team-section")}
+        initialOpen={false}>
+          <PanelRow> <Label> {__("Columns", "team-section")} </Label> <Device/> </PanelRow>
+
+          <RangeControl value={styles?.columns[device]} min={1} max={12} onChange={(val)=> setAttributes({ styles: { ...styles, columns: { ...styles.columns, [device]: val } } })} />
+
+            <RangeControl
+            label={__("Column Gap", "team-section")}
+            value={styles?.columnGap}
+            min={0}
+            max={200}
+            onChange={(val)=> setAttributes({ styles: { ...styles, columnGap: val } })} />
+
+            <RangeControl
+            label={__("Row Gap", "team-section")}
+            value={styles?.rowGap}
+            min={0}
+            max={200}
+            onChange={(val)=> setAttributes({ styles: { ...styles, rowGap: val } })} />
+
+      </PanelBody>
+
+      
+      <PanelBody className="bPlPanelBody"
+        title={__("Elements", "team-section")}
+        initialOpen={false}>
+
+        <ToggleControl className='mt10' label="Show Name" checked={options.showName} onChange={(val) => setAttributes({ options: { ...options, showName: val } })} />
+        <ToggleControl className='mt10' label="Show Designation" checked={options.showDesignation} onChange={(val) => setAttributes({ options: { ...options, showDesignation: val } })} />
+        <ToggleControl className='mt10' label="Show Social" checked={options.showSocial} onChange={(val) => setAttributes({ options: { ...options, showSocial: val } })} />
+        <ToggleControl className='mt10' label="Open In New Tab" checked={options.openInNewTab} onChange={(val) => setAttributes({ options: { ...options, openInNewTab: val } })} />
+
+
+
       </PanelBody>
   
   </>

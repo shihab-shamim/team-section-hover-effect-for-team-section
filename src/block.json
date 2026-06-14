@@ -85,6 +85,18 @@
         "showSocial":true,
         "openInNewTab":true
       }
+    },
+    "styles":{
+      "type":"object",
+      "default":{
+        "columns":{
+						"desktop":3,
+						"tablet":2,
+						"mobile":1
+					},
+					"columnGap":50,
+					"rowGap":50
+      }
     }
 		
 	},

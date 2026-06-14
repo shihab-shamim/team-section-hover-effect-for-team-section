@@ -1002,7 +1002,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../bpl-tools/utils/getCSS */ "../bpl-tools/utils/getCSS.js");
+/* harmony import */ var _bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../bpl-tools/utils/data */ "../bpl-tools/utils/data.js");
+/* harmony import */ var _bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../bpl-tools/utils/getCSS */ "../bpl-tools/utils/getCSS.js");
+
 
 
 const Style = ({
@@ -1010,17 +1012,33 @@ const Style = ({
   id
 }) => {
   const {
-    colors
+    styles = {}
   } = attributes;
   const mainSl = `#${id}`;
-  const blockSl = `${mainSl} .bBlocksTestPurpose`;
+  const teamSectionSl = `${mainSl} .tsbwhe-main`;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
+
+		${teamSectionSl}{
+		 grid-template-columns: repeat(${styles?.columns?.desktop}, 220px);
+		 		column-gap: ${styles?.columnGap || 50}px;
+			row-gap: ${styles?.rowGap || 50}px;
 		
-		${blockSl} p{
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(colors)}
 		}
+
+		${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint}{
+		${teamSectionSl}{
+		 grid-template-columns: repeat(${styles?.columns?.tablet}, 220px);
+         	}
+		}
+				${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.mobileBreakpoint}{
+		${teamSectionSl}{
+		 grid-template-columns: repeat(${styles?.columns?.mobile}, 220px);
+         	}
+		}
+		
+		
 
 	`
     }
@@ -1047,8 +1065,15 @@ const OneCard = ({
   attributes
 }) => {
   const {
-    profiles = []
+    profiles = [],
+    options
   } = attributes || {};
+  const {
+    showName,
+    showDesignation,
+    showSocial,
+    openInNewTab
+  } = options || {};
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "tsbwhe-main"
   }, profiles.map((profile, index) => {
@@ -1068,11 +1093,13 @@ const OneCard = ({
       alt: name
     })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "tsbwhe-caption"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, name), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, designation), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    }, showName && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, name), showDesignation && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, designation), showSocial && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "tsbwhe-social-links"
     }, social.map((item, sIndex) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
       href: item.link || '#',
-      key: sIndex
+      key: sIndex,
+      target: openInNewTab ? '_blank' : '_self',
+      rel: "noopener noreferrer"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       dangerouslySetInnerHTML: {
         __html: item.icon

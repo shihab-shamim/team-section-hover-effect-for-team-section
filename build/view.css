@@ -12,21 +12,10 @@
 .wp-block-tsb-team-section-hover-effect-pro .tsbwhe-main {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 220px);
   justify-content: center;
   align-content: center;
   gap: 50px;
   padding: 40px 20px;
-}
-@media (max-width: 768px) {
-  .wp-block-tsb-team-section-hover-effect-pro .tsbwhe-main {
-    grid-template-columns: repeat(2, 220px);
-  }
-}
-@media (max-width: 480px) {
-  .wp-block-tsb-team-section-hover-effect-pro .tsbwhe-main {
-    grid-template-columns: 220px;
-  }
 }
 .wp-block-tsb-team-section-hover-effect-pro .tsbwhe-profile-card {
   position: relative;
