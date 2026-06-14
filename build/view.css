@@ -68,19 +68,30 @@
   font-family: sans-serif;
   margin: 2px 0 9px 0;
 }
+.wp-block-tsb-team-section-hover-effect-pro .tsbwhe-profile-card .tsbwhe-caption .tsbwhe-social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
 .wp-block-tsb-team-section-hover-effect-pro .tsbwhe-profile-card .tsbwhe-caption .tsbwhe-social-links a {
   color: #333;
-  margin-right: 15px;
   font-size: 21px;
   transition: 0.6s;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
 }
 .wp-block-tsb-team-section-hover-effect-pro .tsbwhe-profile-card .tsbwhe-caption .tsbwhe-social-links a:hover {
   color: #0c52a1;
 }
+.wp-block-tsb-team-section-hover-effect-pro .tsbwhe-profile-card .tsbwhe-caption .tsbwhe-social-links a span {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+}
 .wp-block-tsb-team-section-hover-effect-pro .tsbwhe-profile-card .tsbwhe-caption .tsbwhe-social-links a svg {
-  width: 21px;
-  height: 21px;
+  width: 21px !important;
+  height: 21px !important;
   fill: currentColor;
   vertical-align: middle;
 }

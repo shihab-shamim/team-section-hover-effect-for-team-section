@@ -79,20 +79,31 @@ $primaryColor: #4527a4;
                 }
 
                 .tsbwhe-social-links {
+                    display: flex;
+                    justify-content: center;
+                    gap: 15px;
+
                     a {
                         color: #333;
-                        margin-right: 15px;
                         font-size: 21px;
                         transition: .6s;
-                        display: inline-block;
+                        display: inline-flex;
+                        align-items: center;
+                        text-decoration: none;
 
                         &:hover {
                             color: #0c52a1;
                         }
 
+                        span {
+                            display: inline-flex;
+                            align-items: center;
+                            line-height: 0;
+                        }
+
                         svg {
-                            width: 21px;
-                            height: 21px;
+                            width: 21px !important;
+                            height: 21px !important;
                             fill: currentColor;
                             vertical-align: middle;
                         }
