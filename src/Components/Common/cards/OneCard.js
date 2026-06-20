@@ -1,6 +1,6 @@
 
 
-export const OneCard = ({attributes}) => {
+export const OneCard = ({attributes, Richtext, setAttributes}) => {
     const {profiles =[],options} = attributes || {};
     const { showName, showDesignation, showSocial, openInNewTab } = options || {};
 
@@ -15,8 +15,13 @@ export const OneCard = ({attributes}) => {
                         <img src={image} alt={name} />
                     </div>
                     <div className="tsbwhe-caption">
-                      {showName && <h3 className="tsbwhe-name">{name}</h3>}
-                      {showDesignation && <p className="tsbwhe-designation">{designation}</p>}
+                      {showName && name && !Richtext && <h3 className="tsbwhe-name" dangerouslySetInnerHTML={{ __html: name }} />}
+
+                      {showName && Richtext && <Richtext tagName="h3" value={name} onChange={(value) => setAttributes({ ...attributes, profiles: attributes.profiles.map((p, i) => i === index ? { ...p, name: value } : p) })} className="tsbwhe-name" placeholder="Enter name" />}
+
+                      {showDesignation && designation && !Richtext && <p className="tsbwhe-designation" dangerouslySetInnerHTML={{ __html: designation }} />}
+
+                      {showDesignation && Richtext && <Richtext tagName="p" value={designation} onChange={(value) => setAttributes({ ...attributes, profiles: attributes.profiles.map((p, i) => i === index ? { ...p, designation: value } : p) })} className="tsbwhe-designation" placeholder="Enter designation" />}
                         {showSocial && <div className="tsbwhe-social-links">
                             {social.map((item, sIndex) => (
                                 <a className="tsbwhe-social-links" href={item.link || '#'} key={sIndex} target={openInNewTab ? '_blank' : '_self'} rel='noopener noreferrer'>

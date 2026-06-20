@@ -1164,7 +1164,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 const OneCard = ({
-  attributes
+  attributes,
+  Richtext,
+  setAttributes
 }) => {
   const {
     profiles = [],
@@ -1195,11 +1197,41 @@ const OneCard = ({
       alt: name
     })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "tsbwhe-caption"
-    }, showName && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
-      className: "tsbwhe-name"
-    }, name), showDesignation && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-      className: "tsbwhe-designation"
-    }, designation), showSocial && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    }, showName && name && !Richtext && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+      className: "tsbwhe-name",
+      dangerouslySetInnerHTML: {
+        __html: name
+      }
+    }), showName && Richtext && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Richtext, {
+      tagName: "h3",
+      value: name,
+      onChange: value => setAttributes({
+        ...attributes,
+        profiles: attributes.profiles.map((p, i) => i === index ? {
+          ...p,
+          name: value
+        } : p)
+      }),
+      className: "tsbwhe-name",
+      placeholder: "Enter name"
+    }), showDesignation && designation && !Richtext && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      className: "tsbwhe-designation",
+      dangerouslySetInnerHTML: {
+        __html: designation
+      }
+    }), showDesignation && Richtext && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Richtext, {
+      tagName: "p",
+      value: designation,
+      onChange: value => setAttributes({
+        ...attributes,
+        profiles: attributes.profiles.map((p, i) => i === index ? {
+          ...p,
+          designation: value
+        } : p)
+      }),
+      className: "tsbwhe-designation",
+      placeholder: "Enter designation"
+    }), showSocial && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "tsbwhe-social-links"
     }, social.map((item, sIndex) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
       className: "tsbwhe-social-links",
